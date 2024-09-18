@@ -4,11 +4,11 @@
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_controller.dart' as carousel;
+import 'package:carousel_slider/carousel_slider.dart' as slider; 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:image/image.dart' as ui;
-
 import 'package:flutter_jigsaw_puzzle/src/error.dart';
 
 class JigsawPuzzle extends StatefulWidget {
@@ -99,7 +99,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
   List<List<BlockClass>> images = <List<BlockClass>>[];
   ValueNotifier<List<BlockClass>> blocksNotifier =
       ValueNotifier<List<BlockClass>>(<BlockClass>[]);
-  CarouselController? _carouselController;
+  carousel.CarouselController? _carouselController;
 
   Offset _pos = Offset.zero;
   int? _index;
@@ -222,7 +222,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
 
   @override
   void initState() {
-    _carouselController = CarouselController();
+    _carouselController = carousel.CarouselController();
     super.initState();
   }
 
@@ -382,9 +382,9 @@ class JigsawWidgetState extends State<JigsawWidget> {
               Container(
                   color: Colors.white,
                   height: 120,
-                  child: CarouselSlider(
+                  child: slider.CarouselSlider(
                     carouselController: _carouselController,
-                    options: CarouselOptions(
+                    options: slider.CarouselOptions(
                       initialPage: _index ?? 0,
                       height: 80,
                       aspectRatio: 1,
