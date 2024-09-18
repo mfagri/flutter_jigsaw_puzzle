@@ -11,4 +11,4 @@ dependencies:
     sdk: flutter
 
   image: ^3.0.5
-  carousel_slider: ^4.0.0
+  carousel_slider: ^5.0.0

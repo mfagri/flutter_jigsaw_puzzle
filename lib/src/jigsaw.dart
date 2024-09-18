@@ -99,7 +99,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
   List<List<BlockClass>> images = <List<BlockClass>>[];
   ValueNotifier<List<BlockClass>> blocksNotifier =
       ValueNotifier<List<BlockClass>>(<BlockClass>[]);
-  carousel.CarouselController? _carouselController;
+  carousel.CarouselSliderController? _carouselController;
 
   Offset _pos = Offset.zero;
   int? _index;
@@ -222,7 +222,7 @@ class JigsawWidgetState extends State<JigsawWidget> {
 
   @override
   void initState() {
-    _carouselController = carousel.CarouselController();
+    _carouselController = carousel.CarouselSliderController();
     super.initState();
   }
 
